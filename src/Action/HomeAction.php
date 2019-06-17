@@ -7,6 +7,7 @@
  */
 
 namespace App\Action;
+
 use App\Responder\HomeResponder as Responder;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
