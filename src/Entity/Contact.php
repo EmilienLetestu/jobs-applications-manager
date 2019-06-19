@@ -15,7 +15,7 @@ namespace App\Entity;
 class Contact
 {
     /**
-     * @var 
+     * @var
      */
     private $id;
 
