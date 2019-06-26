@@ -27,22 +27,22 @@ class Contact
     /**
      * @var
      */
-    private $email;
+    private $email = null;
 
     /**
      * @var
      */
-    private $source;
+    private $source = null;
 
     /**
      * @var
      */
-    private $mobilePhone;
+    private $mobilePhone = null;
 
     /**
      * @var
      */
-    private $landLine;
+    private $landLine = null;
 
     /**
      * @return int
@@ -70,33 +70,33 @@ class Contact
 
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getEmail(): string
+    public function getEmail():? string
     {
         return $this->email;
     }
 
     /**
-     * @param string $email
+     * @param null|string $email
      */
-    public function setEmail(string $email): void
+    public function setEmail(?string $email): void
     {
         $this->email = $email;
     }
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getSource(): string
+    public function getSource(): ?string
     {
         return $this->source;
     }
 
     /**
-     * @param string $source
+     * @param null|string $source
      */
-    public function setSource(string $source): void
+    public function setSource(?string $source): void
     {
         $this->source = $source;
     }
