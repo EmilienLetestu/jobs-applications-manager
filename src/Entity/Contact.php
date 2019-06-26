@@ -45,6 +45,11 @@ class Contact
     private $landLine = null;
 
     /**
+     * @var
+     */
+    private $company;
+
+    /**
      * @return int
      */
     public function getId(): int
@@ -131,5 +136,21 @@ class Contact
     public function setLandLine(?string $landLine): void
     {
         $this->landLine = $landLine;
+    }
+
+    /**
+     * @return Company|null
+     */
+    public function getCompany(): ?Company
+    {
+        return $this->company;
+    }
+
+    /**
+     * @param Company $company
+     */
+    public function setCompany(Company $company)
+    {
+        $this->company = $company;
     }
 }

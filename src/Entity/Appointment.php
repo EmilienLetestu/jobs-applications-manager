@@ -40,6 +40,11 @@ class Appointment
     private $location;
 
     /**
+     * @var
+     */
+    private $application;
+
+    /**
      * @return int
      */
     public function getId(): int
@@ -109,5 +114,21 @@ class Appointment
     public function setLocation(string $location): void
     {
         $this->location = $location;
+    }
+
+    /**
+     * @return Application
+     */
+    public function getApplication(): Application
+    {
+        return $this->application;
+    }
+
+    /**
+     * @param Application $application
+     */
+    public function setApplication(Application $application)
+    {
+        $this->application = $application;
     }
 }

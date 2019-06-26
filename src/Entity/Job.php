@@ -7,6 +7,7 @@
  */
 
 namespace App\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
 
 
 /**
@@ -29,6 +30,20 @@ class Job
      * @var
      */
     private $position;
+
+    /**
+     * @var ArrayCollection
+     */
+    private $applications;
+
+
+    /**
+     * Job constructor.
+     */
+    public function __construct()
+    {
+        $this->applications = new ArrayCollection();
+    }
 
     /**
      * @return int
@@ -69,4 +84,30 @@ class Job
     {
         $this->position = $position;
     }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getApplications(): ArrayCollection
+    {
+        return $this->applications;
+    }
+
+    /**
+     * @param Application $application
+     */
+    public function addApplication(Application $application)
+    {
+        $this->applications[] = $application;
+    }
+
+    /**
+     * @param Application $application
+     */
+    public function removeApplication(Application $application)
+    {
+        $this->applications->removeElement($application);
+    }
+
+
 }

@@ -7,6 +7,7 @@
  */
 
 namespace App\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Class Company
@@ -28,6 +29,19 @@ class Company
      * @var
      */
     private $type;
+
+    /**
+     * @var ArrayCollection
+     */
+    private $contacts;
+
+    /**
+     * Contact constructor.
+     */
+    public function __construct()
+    {
+        $this->contacts = new ArrayCollection();
+    }
 
     /**
      * @return int
@@ -67,5 +81,21 @@ class Company
     public function setType(string $type)
     {
         $this->type = $type;
+    }
+
+    /**
+     * @param Contact $contact
+     */
+    public function addContact(Contact $contact)
+    {
+        $this->contacts[] = $contact;
+    }
+
+    /**
+     * @param Contact $contact
+     */
+    public function removeContact(Contact $contact)
+    {
+        $this->contacts->removeElement($contact);
     }
 }

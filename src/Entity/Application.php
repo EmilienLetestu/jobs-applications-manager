@@ -30,6 +30,17 @@ class Application
     private $status;
 
     /**
+     * @var
+     */
+    private $job;
+
+    /**
+     * @var
+     */
+    private $appointment;
+
+
+    /**
      * @return int
      */
     public function getId(): int
@@ -67,5 +78,37 @@ class Application
     public function setStatus(string $status)
     {
         $this->status = $status;
+    }
+
+    /**
+     * @return Job
+     */
+    public function getJob(): Job
+    {
+        return $this->job;
+    }
+
+    /**
+     * @param Job $job
+     */
+    public function setJob(Job $job)
+    {
+        $this->job = $job;
+    }
+
+    /**
+     * @return Appointment|null
+     */
+    public function getAppointment(): ?Appointment
+    {
+        return $this->appointment;
+    }
+
+    /**
+     * @param Appointment $appointment
+     */
+    public function setAppointment(Appointment $appointment)
+    {
+        $this->appointment = $appointment;
     }
 }

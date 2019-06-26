@@ -10,5 +10,6 @@
         </id>
         <field name="description" column="description" nullable="true" type="text"/>
         <field name="position" column="position" type="string"/>
+       <one-to-many field="applications" target-entity="App\Entity\Application" mapped-by="job"/>
     </entity>
 </doctrine-mapping>
