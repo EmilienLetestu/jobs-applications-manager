@@ -8,16 +8,106 @@
 
 namespace App\Entity;
 
-
+/**
+ * Class Appointment
+ * @package App\Entity
+ */
 class Appointment
 {
-  private $id;
+    /**
+     * @var
+     */
+    private $id;
 
-  private $dateStart;
+    /**
+     * @var
+     */
+    private $dateStart;
 
-  private $dateEnd;
+    /**
+     * @var
+     */
+    private $dateEnd;
 
-  private $postpone;
+    /**
+     * @var
+     */
+    private $postpone;
 
-  private $location;
+    /**
+     * @var
+     */
+    private $location;
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+      return $this->id;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateStart(): \DateTime
+    {
+        return $this->dateStart;
+    }
+
+    /**
+     * @param \DateTime $dateStart
+     */
+    public function setDateStart(\DateTime $dateStart)
+    {
+        $this->dateStart = $dateStart;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateEnd(): \DateTime
+    {
+        return $this->dateEnd;
+    }
+
+    /**
+     * @param \DateTime $dateEnd
+     */
+    public function setDateEnd(\DateTime $dateEnd): void
+    {
+        $this->dateEnd = $dateEnd;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getPostpone(): bool
+    {
+        return $this->postpone;
+    }
+
+    /**
+     * @param bool $postpone
+     */
+    public function setPostpone(bool $postpone): void
+    {
+        $this->postpone = $postpone;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLocation(): string
+    {
+        return $this->location;
+    }
+
+    /**
+     * @param string $location
+     */
+    public function setLocation(string $location): void
+    {
+        $this->location = $location;
+    }
 }

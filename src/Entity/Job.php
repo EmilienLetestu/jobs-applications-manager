@@ -8,6 +8,7 @@
 
 namespace App\Entity;
 
+
 /**
  * Class Job
  * @package App\Entity
