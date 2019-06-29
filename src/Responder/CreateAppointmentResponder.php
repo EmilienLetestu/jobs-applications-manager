@@ -13,6 +13,10 @@ use Symfony\Component\Form\FormView;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
 
+/**
+ * Class CreateAppointmentResponder
+ * @package App\Responder
+ */
 class CreateAppointmentResponder
 {
     /**
