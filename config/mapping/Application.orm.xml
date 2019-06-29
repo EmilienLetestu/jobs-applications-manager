@@ -14,10 +14,19 @@
                 field="job"
                 target-entity="App\Entity\Job"
                 inversed-by="applications">
-            <join-column name="job_id" referenced-column-name="id" />
+            <join-column name="job_id" referenced-column-name="id"/>
         </many-to-one>
-        <one-to-one field="appointment" target-entity="App\Entity\Appointment" inversed-by="application">
+        <one-to-one
+                field="appointment"
+                target-entity="App\Entity\Appointment"
+                inversed-by="application">
             <join-column name="appointment_id" referenced-column-name="id" />
         </one-to-one>
+        <many-to-one
+                field="company"
+                target-entity="App\Entity\Company"
+                inversed-by="applications">
+            <join-column name="company_id" referenced-column-name="id" />
+        </many-to-one>
     </entity>
 </doctrine-mapping>
