@@ -70,6 +70,24 @@ class AppointmentDataModelTest extends KernelTestCase
 
         $this->assertEquals(
             [
+                'fieldName'  => 'lat',
+                'type'       => 'float',
+                'columnName' => 'lat'
+            ],
+            $mapping['lat']
+        );
+
+        $this->assertEquals(
+            [
+                'fieldName'   => 'lng',
+                'type'        => 'float',
+                'columnName'  => 'lng'
+            ],
+            $mapping['lng']
+        );
+
+        $this->assertEquals(
+            [
                 'fieldName'  => 'postpone',
                 'type'       => 'boolean',
                 'columnName' => 'postpone'
@@ -86,6 +104,6 @@ class AppointmentDataModelTest extends KernelTestCase
             $mapping['location']
         );
 
-        $this->assertEquals(5, count($mapping));
+        $this->assertEquals(7, count($mapping));
     }
 }

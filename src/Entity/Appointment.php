@@ -42,6 +42,16 @@ class Appointment
     /**
      * @var
      */
+    private $lng;
+
+    /**
+     * @var
+     */
+    private $lat;
+
+    /**
+     * @var
+     */
     private $application;
 
     /**
@@ -114,6 +124,38 @@ class Appointment
     public function setLocation(string $location): void
     {
         $this->location = $location;
+    }
+
+    /**
+     * @return float
+     */
+    public function getLat(): float
+    {
+        return $this->lat;
+    }
+
+    /**
+     * @param float $lat
+     */
+    public function setLat(float $lat): void
+    {
+        $this->lat = $lat;
+    }
+
+    /**
+     * @return float
+     */
+    public function getLng(): float
+    {
+        return $this->lng;
+    }
+
+    /**
+     * @param float $lng
+     */
+    public function setLng(float $lng): void
+    {
+        $this->lng = $lng;
     }
 
     /**
