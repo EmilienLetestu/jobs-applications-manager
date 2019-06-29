@@ -52,5 +52,4 @@
            paths:
              - node_modules
 
-       - run: ./bin/phpunit build
-       - run: ./bin/phpunit run
+       - run: ./bin/phpunit
