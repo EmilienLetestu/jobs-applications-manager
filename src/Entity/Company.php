@@ -84,6 +84,14 @@ class Company
     }
 
     /**
+     * @return ArrayCollection
+     */
+    public function getContacts(): ArrayCollection
+    {
+        return $this->contacts;
+    }
+
+    /**
      * @param Contact $contact
      */
     public function addContact(Contact $contact)

@@ -41,7 +41,5 @@ class AppointmentTest extends TestCase
         $this->assertFalse($appointment->getPostpone());
         $this->assertEquals($lat, $appointment->getLat());
         $this->assertEquals($lng, $appointment->getLng());
-
-
     }
 }
