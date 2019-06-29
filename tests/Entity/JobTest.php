@@ -8,11 +8,14 @@
 
 namespace App\Tests\Entity;
 
-
 use App\Entity\Job;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
 
+/**
+ * Class JobTest
+ * @package App\Tests\Entity
+ */
 class JobTest extends TestCase
 {
     public function testJob()

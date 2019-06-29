@@ -8,10 +8,13 @@
 
 namespace App\Tests\Entity;
 
-
 use App\Entity\Contact;
 use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
 
+/**
+ * Class ContactTest
+ * @package App\Tests\Entity
+ */
 class ContactTest extends TestCase
 {
     public function testContact()

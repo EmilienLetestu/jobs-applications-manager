@@ -8,10 +8,13 @@
 
 namespace App\Tests\DataModel;
 
-
 use App\Entity\Appointment;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
+/**
+ * Class AppointmentDataModelTest
+ * @package App\Tests\DataModel
+ */
 class AppointmentDataModelTest extends KernelTestCase
 {
     /**

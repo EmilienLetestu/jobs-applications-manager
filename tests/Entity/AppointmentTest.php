@@ -8,7 +8,6 @@
 
 namespace App\Tests\Entity;
 
-
 use App\Entity\Appointment;
 use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
 
