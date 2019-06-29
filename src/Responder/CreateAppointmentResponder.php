@@ -43,7 +43,7 @@ class CreateAppointmentResponder
     public function __invoke(FormView $form): Response
     {
         return new Response(
-            $this->twig->render('createAppointment.html.twig',[
+            $this->twig->render('appointment/create.html.twig',[
                 'form' => $form
             ])
         );
