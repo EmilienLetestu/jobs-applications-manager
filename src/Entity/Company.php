@@ -36,11 +36,17 @@ class Company
     private $contacts;
 
     /**
+     * @var ArrayCollection
+     */
+    private $applications;
+
+    /**
      * Contact constructor.
      */
     public function __construct()
     {
-        $this->contacts = new ArrayCollection();
+        $this->contacts     = new ArrayCollection();
+        $this->applications = new ArrayCollection();
     }
 
     /**
@@ -105,5 +111,29 @@ class Company
     public function removeContact(Contact $contact)
     {
         $this->contacts->removeElement($contact);
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getApplications(): ArrayCollection
+    {
+        return $this->contacts;
+    }
+
+    /**
+     * @param Application $application
+     */
+    public function addApplication(Application $application)
+    {
+        $this->applications[] = $application;
+    }
+
+    /**
+     * @param Application $application
+     */
+    public function removeApplication(Application $application)
+    {
+        $this->applications->removeElement($application);
     }
 }

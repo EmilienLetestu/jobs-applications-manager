@@ -10,6 +10,15 @@
         </id>
         <field name="name" column="name" type="string" length="70"/>
         <field name="type" column="type" type="string" length="25"/>
-        <one-to-many field="contacts" target-entity="App\Entity\Contact" mapped-by="company"/>
+        <one-to-many
+                field="contacts"
+                target-entity="App\Entity\Contact"
+                mapped-by="company"
+        />
+        <one-to-many
+                field="applications"
+                target-entity="App\Entity\Application"
+                mapped-by="company"
+        />
     </entity>
 </doctrine-mapping>

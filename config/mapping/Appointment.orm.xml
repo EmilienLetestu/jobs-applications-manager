@@ -14,6 +14,10 @@
         <field name="location" column="location" type="string"/>
         <field name="lat" column="lat" type="float"/>
         <field name="lng" column="lng" type="float"/>
-        <one-to-one field="application" target-entity="App\Entity\Application" mapped-by="appointment"/>
+        <one-to-one
+                field="application"
+                target-entity="App\Entity\Application"
+                mapped-by="appointment"
+        />
     </entity>
 </doctrine-mapping>

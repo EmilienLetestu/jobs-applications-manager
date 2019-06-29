@@ -39,6 +39,11 @@ class Application
      */
     private $appointment;
 
+    /**
+     * @var
+     */
+    private $company;
+
 
     /**
      * @return int
@@ -110,5 +115,21 @@ class Application
     public function setAppointment(Appointment $appointment)
     {
         $this->appointment = $appointment;
+    }
+
+    /**
+     * @return Company
+     */
+    public function getCompany(): Company
+    {
+        return $this->company;
+    }
+
+    /**
+     * @param Company $company
+     */
+    public function setCompany(Company $company)
+    {
+        $this->company = $company;
     }
 }

@@ -28,6 +28,7 @@ class CompanyTest extends TestCase
         $this->assertEquals('test', $company->getName());
         $this->assertEquals('ssi', $company->getType());
         $this->assertTrue($company->getContacts() instanceof ArrayCollection);
+        $this->assertTrue($company->getApplications() instanceof ArrayCollection);
 
     }
 }
