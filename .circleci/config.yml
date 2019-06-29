@@ -52,8 +52,5 @@
            paths:
              - node_modules
 
-
-       # run tests with phpunit or codecept
-       #- run: ./vendor/bin/phpunit
-       - run: ./vendor/bin/phpunit build
-       - run: ./vendor/bin/phpunit run
+       - run: ./bin/phpunit build
+       - run: ./bin/phpunit run
