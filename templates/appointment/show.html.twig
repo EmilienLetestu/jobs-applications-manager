@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+    {% block body %}
+
+        <h1 class="main-information">Rendez-vous</h1>
+
+        <h2 class="sub-information">{{ appointment.application.company.name|capitalize }} - {{ appointment.application.job.position|capitalize }}</h2>
+
+    {% endblock %}
