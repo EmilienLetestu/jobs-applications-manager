@@ -6,10 +6,10 @@
  * Time: 21:03
  */
 
-namespace App\Action;
+namespace App\Action\Appointment;
 
 use App\Form\type\AppointmentType;
-use App\Responder\CreateAppointmentResponder as Responder;
+use App\Responder\Appointment\CreateResponder as Responder;
 use App\Handler\Interfaces\CreateAppointmentHandlerInterface as FormHandlerInterface;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,10 +19,10 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Class CreateAppointmentAction
+ * Class CreateAction
  * @package App\Action
  */
-class CreateAppointmentAction
+class CreateAction
 {
     /**
      * @var FormFactoryInterface
@@ -45,7 +45,7 @@ class CreateAppointmentAction
     private $session;
 
     /**
-     * CreateAppointmentAction constructor.
+     * CreateAction constructor.
      * @param FormFactoryInterface $formFactory
      * @param FormHandlerInterface $handler
      * @param UrlGeneratorInterface $urlGenerator
@@ -68,7 +68,7 @@ class CreateAppointmentAction
     /**
      * @Route(
      *     "/appointment/create",
-     *     name="createAppointment",
+     *     name="create_appointment",
      *     methods={"POST", "GET"}
      * )
      * @param Request $request

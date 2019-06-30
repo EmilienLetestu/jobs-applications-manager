@@ -6,7 +6,7 @@
  * Time: 21:04
  */
 
-namespace App\Responder;
+namespace App\Responder\Appointment;
 
 
 use Symfony\Component\Form\FormView;
@@ -14,10 +14,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
 
 /**
- * Class CreateAppointmentResponder
+ * Class CreateResponder
  * @package App\Responder
  */
-class CreateAppointmentResponder
+class CreateResponder
 {
     /**
      * @var Environment
@@ -25,7 +25,7 @@ class CreateAppointmentResponder
     private $twig;
 
     /**
-     * CreateAppointmentResponder constructor.
+     * CreateResponder constructor.
      * @param Environment $twig
      */
     public function __construct(Environment $twig)

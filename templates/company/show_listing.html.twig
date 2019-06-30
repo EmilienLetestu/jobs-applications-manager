@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+    {% block body %}
+
+        <h1 class="main-information">Entreprises</h1>
+
+        <h2 class="sub-information">Listing</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">nom</th>
+                    <th scope="col">type</th>
+                    <th scope="col">info</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for company in companies %}
+                <tr>
+                    <th>{{ company.id }}</th>
+                    <th>{{ company.name }}</th>
+                    <th>{{ company.type }}</th>
+                    <th><a href="{{ path('show_company',{'id' : company.id}) }}">Plus d'info</a></th>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    {% endblock %}
