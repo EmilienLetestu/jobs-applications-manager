@@ -62,10 +62,11 @@ class AppointmentRepository extends ServiceEntityRepository implements Appointme
      */
     public function findAllAppointments(): array
     {
-        $this->createQueryBuilder('a')
-            ->select('a')
-            ->getQuery()
-            ->getResult()
+        return
+            $this->createQueryBuilder('a')
+                ->select('a')
+                ->getQuery()
+                ->getResult()
         ;
     }
 

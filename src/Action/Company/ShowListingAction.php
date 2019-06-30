@@ -33,7 +33,11 @@ class ShowListingAction
     }
 
     /**
-     * @Route("/company", name="company_listing", methods={"GET"})
+     * @Route(
+     *     "/company",
+     *     name="company_listing",
+     *     methods={"GET"}
+     * )
      * @param Responder $responder
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \Twig\Error\LoaderError

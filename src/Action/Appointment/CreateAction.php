@@ -68,7 +68,7 @@ class CreateAction
     /**
      * @Route(
      *     "/appointment/create",
-     *     name="createAppointment",
+     *     name="create_appointment",
      *     methods={"POST", "GET"}
      * )
      * @param Request $request
