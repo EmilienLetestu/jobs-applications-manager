@@ -21,6 +21,6 @@ class ShowActionTest extends WebTestCase
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
         $this->assertSelectorTextContains('html h1', 'Rendez-vous');
-        $this->assertSelectorTextContains('html h2', 'Test company - backend developer');
+        $this->assertSelectorTextContains('html h2', 'Test company - Backend developer');
     }
 }
