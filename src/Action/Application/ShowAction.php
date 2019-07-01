@@ -3,22 +3,22 @@
  * Created by PhpStorm.
  * User: emilien
  * Date: 01/07/2019
- * Time: 14:58
+ * Time: 15:29
  */
 
 namespace App\Action\Application;
 
-
 use App\Repository\Interfaces\ApplicationRepositoryInterface;
-use App\Responder\Application\ShowListingResponder as Responder;
+use Symfony\Component\HttpFoundation\Request;
+use App\Responder\Application\ShowResponder as Responder;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Class ShowListingAction
+ * Class ShowAction
  * @package App\Action\Application
  */
-class ShowListingAction
+class ShowAction
 {
     /**
      * @var ApplicationRepositoryInterface
@@ -26,7 +26,7 @@ class ShowListingAction
     private $repository;
 
     /**
-     * ShowListingAction constructor.
+     * ShowAction constructor.
      * @param ApplicationRepositoryInterface $repository
      */
     public function __construct(ApplicationRepositoryInterface $repository)
@@ -36,20 +36,22 @@ class ShowListingAction
 
     /**
      * @Route(
-     *     "/application",
-     *     name="application_listing",
+     *     "/application/{id}",
+     *     name="show_application",
+     *     requirements={"id" = "\d+"},
      *     methods={"GET"}
      * )
+     * @param Request $request
      * @param Responder $responder
      * @return Response
      * @throws \Twig\Error\LoaderError
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function __invoke(Responder $responder): Response
+    public function __invoke(Request $request, Responder $responder): Response
     {
         return $responder(
-            $this->repository->findAllApplications()
+            $this->repository->findApplicationWithId($request->get('id'))
         );
     }
 }

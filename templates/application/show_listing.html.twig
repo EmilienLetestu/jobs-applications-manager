@@ -14,6 +14,7 @@
                 <th scope="col">Poste</th>
                 <th scope="col">Candidature du</th>
                 <th scope="col">Statut</th>
+                <th scope="col">Info</th>
             </tr>
             </thead>
             <tbody>
@@ -21,8 +22,10 @@
                 <tr>
                     <th>{{ application.id }}</th>
                     <th>{{ application.company.name }}</th>
+                    <th>{{ application.job.position }}</th>
                     <th>{{ application.appliedOn|date }}</th>
                     <th>{{ application.status }}</th>
+                    <th><a href="{{ path('show_application', {'id' : application.id}) }}">Plus d'info</a></th>
                 </tr>
             {% endfor %}
             </tbody>
