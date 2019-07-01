@@ -8,6 +8,7 @@
 
 namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\PersistentCollection;
 
 
 /**
@@ -88,7 +89,7 @@ class Job
     /**
      * @return ArrayCollection
      */
-    public function getApplications(): ArrayCollection
+    public function getApplications()
     {
         return $this->applications;
     }
@@ -108,6 +109,4 @@ class Job
     {
         $this->applications->removeElement($application);
     }
-
-
 }
