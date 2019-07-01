@@ -34,7 +34,7 @@ class ContactFixtures extends Fixture implements DependentFixtureInterface
        $contact->setEmail('titi@gmail.com');
        $contact->setSource('linkedin');
        $contact->setLandLine(null);
-       $contact->setMobilePhone(0606060606);
+       $contact->setMobilePhone("0606060606");
        $contact->setCompany($company);
 
        $manager->persist($contact);
