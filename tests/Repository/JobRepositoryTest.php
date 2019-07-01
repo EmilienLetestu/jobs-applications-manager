@@ -43,7 +43,7 @@ class JobRepositoryTest extends KernelTestCase
         ;
     }
 
-    public function findAllJobs()
+    public function testFindAllJobs()
     {
         $jobs = $this->getRepository()
             ->findAllJobs()
@@ -52,7 +52,7 @@ class JobRepositoryTest extends KernelTestCase
         $this->assertGreaterThan(0, $jobs);
     }
 
-    public function findJobWithId()
+    public function testFindJobWithId()
     {
         $job = $this->getRepository()
             ->findJobWithId(1)
