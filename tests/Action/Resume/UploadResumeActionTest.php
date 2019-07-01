@@ -6,7 +6,7 @@
  * Time: 17:34
  */
 
-namespace App\Tests\Action\Application;
+namespace App\Tests\Action\Resume;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
