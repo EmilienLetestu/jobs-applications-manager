@@ -16,6 +16,7 @@
                 <th scope="col">N° mobile</th>
                 <th scope="col">N° fixe</th>
                 <th scope="col">Source</th>
+                <th scope="col">Info</th>
             </tr>
             </thead>
             <tbody>
@@ -28,6 +29,7 @@
                     <th>{{ contact.mobilePhone }}</th>
                     <th>{{ contact.landLine }}</th>
                     <th>{{ contact.source }}</th>
+                    <th><a href="{{ path('show_contact', {'id':contact.id}) }}">Plus d'info</a></th>
                 </tr>
             {% endfor %}
             </tbody>

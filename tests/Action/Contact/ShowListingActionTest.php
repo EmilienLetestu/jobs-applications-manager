@@ -11,6 +11,10 @@ namespace App\Tests\Action\Contact;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
+/**
+ * Class ShowListingActionTest
+ * @package App\Tests\Action\Contact
+ */
 class ShowListingActionTest extends WebTestCase
 {
     public function testShowListingAction()

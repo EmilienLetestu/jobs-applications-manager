@@ -3,21 +3,22 @@
  * Created by PhpStorm.
  * User: emilien
  * Date: 01/07/2019
- * Time: 16:31
+ * Time: 16:47
  */
 
 namespace App\Action\Contact;
 
 use App\Repository\Interfaces\ContactRepositoryInterface;
-use App\Responder\Contact\ShowListingResponder as Responder;
+use App\Responder\Contact\ShowResponder as Responder;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Class ShowListingAction
+ * Class ShowAction
  * @package App\Action\Contact
  */
-class ShowListingAction
+class ShowAction
 {
     /**
      * @var ContactRepositoryInterface
@@ -25,7 +26,7 @@ class ShowListingAction
     private $repository;
 
     /**
-     * ShowListingAction constructor.
+     * ShowAction constructor.
      * @param ContactRepositoryInterface $repository
      */
     public function __construct(ContactRepositoryInterface $repository)
@@ -35,21 +36,22 @@ class ShowListingAction
 
     /**
      * @Route(
-     *     "/contact",
-     *     name="contact_listing",
+     *     "/contact/{id}",
+     *     name="show_contact",
+     *     requirements={"id" = "\d+"},
      *     methods={"GET"}
      * )
+     * @param Request $request
      * @param Responder $responder
      * @return Response
      * @throws \Twig\Error\LoaderError
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function __invoke(Responder $responder): Response
+    public function __invoke(Request $request, Responder $responder): Response
     {
-       return $responder(
-           $this->repository->findAllContacts()
-       );
+        return $responder(
+            $this->repository->findContactWithId($request->get('id'))
+        );
     }
-
 }
