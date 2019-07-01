@@ -11,10 +11,10 @@ namespace App\Tests\Action\Resume;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 /**
- * Class UploadResumeActionTest
+ * Class UploadActionTest
  * @package App\Tests\Action\Application
  */
-class UploadResumeActionTest extends WebTestCase
+class UploadActionTest extends WebTestCase
 {
     public function testUploadResumeAction()
     {
