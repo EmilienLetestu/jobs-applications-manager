@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+    {% block body %}
+        <h1 class="main-information">Emplois</h1>
+
+        <h2 class="sub-information">Listing</h2>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">poste</th>
+                <th scope="col">description</th>
+                <th scope="col">entreprise</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for job in jobs %}
+                <tr>
+                    <th>{{ job.id }}</th>
+                    <th>{{ job.position }}</th>
+                    <th>{{ job.description }}</th>
+                    {% for application in job.applications %}
+                        <th scope="col">{{ application.company.name }}</th>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    {% endblock %}
