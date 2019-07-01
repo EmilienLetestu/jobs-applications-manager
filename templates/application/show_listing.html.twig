@@ -2,4 +2,31 @@
 
     {% block body %}
 
+        <h1 class="main-information">Candidatures</h1>
+
+        <h2 class="sub-information">Listing</h2>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Entreprise</th>
+                <th scope="col">Poste</th>
+                <th scope="col">Candidature du</th>
+                <th scope="col">Statut</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for application in applications %}
+                <tr>
+                    <th>{{ application.id }}</th>
+                    <th>{{ application.company.name }}</th>
+                    <th>{{ application.appliedOn|date }}</th>
+                    <th>{{ application.status }}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+
     {% endblock %}
