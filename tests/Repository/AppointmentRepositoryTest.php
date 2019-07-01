@@ -40,7 +40,7 @@ class AppointmentRepositoryTest extends KernelTestCase
     {
         return $this->entityManager
             ->getRepository(Appointment::class)
-            ;
+        ;
     }
 
     public function testFindAllAppointments()
