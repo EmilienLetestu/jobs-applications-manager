@@ -16,11 +16,11 @@ use App\Entity\Application;
 interface ApplicationRepositoryInterface
 {
     /**
-     * @param Application|null $appointment
+     * @param Application|null $application
      * @param string $message
      * @return Application|null
      */
-    public function handleNotFoundException(?Application $appointment, string $message):? Application;
+    public function handleNotFoundException(?Application $application, string $message):? Application;
 
     /**
      * @return array

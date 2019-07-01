@@ -10,6 +10,7 @@ namespace App\Tests\Repository;
 
 
 use App\Entity\Application;
+use App\Repository\ApplicationRepository;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 /**
