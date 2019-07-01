@@ -7,6 +7,7 @@
  */
 
 namespace App\Responder\Resume;
+use Symfony\Component\Form\FormView;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
 
@@ -31,15 +32,18 @@ class UploadResponder
     }
 
     /**
+     * @param FormView $form
      * @return Response
      * @throws \Twig\Error\LoaderError
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function __invoke(): Response
+    public function __invoke(FormView $form): Response
     {
        return new Response(
-           $this->twig->render('resume/upload.html.twig')
+           $this->twig->render('resume/upload.html.twig',[
+               'form' => $form
+           ])
        );
     }
 }

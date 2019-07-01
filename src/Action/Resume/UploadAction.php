@@ -8,11 +8,27 @@
 
 namespace App\Action\Resume;
 
+use App\Form\type\UploadResumeType;
 use App\Responder\Resume\UploadResponder as Responder;
+use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class UploadAction
 {
+    /**
+     * @var FormFactoryInterface
+     */
+    private $formFactory;
+
+    /**
+     * UploadAction constructor.
+     * @param FormFactoryInterface $formFactory
+     */
+    public function __construct(FormFactoryInterface $formFactory)
+    {
+        $this->formFactory = $formFactory;
+    }
+
     /**
      * @Route(
      *     "/upload-resume",
@@ -26,6 +42,10 @@ class UploadAction
      */
     public function __invoke(Responder $responder)
     {
-        return $responder();
+        return $responder(
+            $this->formFactory
+                ->create(UploadResumeType::class)
+                ->createView()
+        );
     }
 }

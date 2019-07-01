@@ -29,6 +29,6 @@ class UploadActionTest extends WebTestCase
         $form = $crawler->filter("form")->form();
 
 
-        $form->submit($form);
+        $crawler = $client->submit($form);
     }
 }
