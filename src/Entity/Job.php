@@ -109,6 +109,4 @@ class Job
     {
         $this->applications->removeElement($application);
     }
-
-
 }
