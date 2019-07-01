@@ -15,6 +15,12 @@ class ShowListingActionTest extends WebTestCase
 {
     public function testShowListingAction()
     {
-        
+        $client = static::createClient();
+        $client->request('GET', '/contact');
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
+        $this->assertSelectorTextContains('html h1', 'Contacts');
+        $this->assertSelectorTextContains('html h2', 'Listing');
     }
 }

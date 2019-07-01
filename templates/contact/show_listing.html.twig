@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+    {% block body %}
+
+        <h1 class="main-information">Contacts</h1>
+
+        <h2 class="sub-information">Listing</h2>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">nom</th>
+                <th scope="col">Entreprise</th>
+                <th scope="col">Email</th>
+                <th scope="col">N° mobile</th>
+                <th scope="col">N° fixe</th>
+                <th scope="col">Source</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for contact in contacts %}
+                <tr>
+                    <th>{{ contact.id }}</th>
+                    <th>{{ contact.name }}</th>
+                    <th>{{ contact.company.name }}</th>
+                    <th>{{ contact.email }}</th>
+                    <th>{{ contact.mobilePhone }}</th>
+                    <th>{{ contact.landLine }}</th>
+                    <th>{{ contact.source }}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    {% endblock %}
