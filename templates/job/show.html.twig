@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+
+    {% block body %}
+        <h1 class="main-information">Emplois</h1>
+        <!-- todo : enhanced job and company mapping -->
+        <h2 class="sub-information">{{ job.applications[0].company.name|capitalize }} - {{ job.position|capitalize }}</h2>
+    {% endblock %}

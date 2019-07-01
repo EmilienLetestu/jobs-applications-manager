@@ -12,6 +12,7 @@
                 <th scope="col">poste</th>
                 <th scope="col">description</th>
                 <th scope="col">entreprise</th>
+                <th scope="col">Info</th>
             </tr>
             </thead>
             <tbody>
@@ -23,6 +24,7 @@
                     {% for application in job.applications %}
                         <th scope="col">{{ application.company.name }}</th>
                     {% endfor %}
+                    <th><a href="{{ path('show_job',{'id' : job.id}) }}">Plus d'info</a></th>
                 </tr>
             {% endfor %}
             </tbody>
