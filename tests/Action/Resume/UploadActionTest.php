@@ -20,9 +20,15 @@ class UploadActionTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $client->request('GET', '/upload-resume');
+        $crawler = $client->request('GET', '/upload-resume');
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertSelectorTextContains('html h1', 'Upload du CV');
+        $this->assertSelectorExists('form');
+
+        $form = $crawler->filter("form")->form();
+
+
+        $form->submit($form);
     }
 }
