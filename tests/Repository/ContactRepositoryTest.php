@@ -3,17 +3,17 @@
  * Created by PhpStorm.
  * User: emilien
  * Date: 01/07/2019
- * Time: 10:56
+ * Time: 15:50
  */
 
 namespace App\Tests\Repository;
 
-use App\Entity\Appointment;
-use App\Repository\AppointmentRepository;
+
+use App\Entity\Contact;
 use Doctrine\ORM\EntityRepository;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
-class AppointmentRepositoryTest extends KernelTestCase
+class ContactRepositoryTest extends KernelTestCase
 {
     /**
      * @var \Doctrine\ORM\EntityManager
@@ -34,31 +34,31 @@ class AppointmentRepositoryTest extends KernelTestCase
     }
 
     /**
-     * @return AppointmentRepository
+     * @return EntityRepository
      */
     private function getRepository(): EntityRepository
     {
         return $this->entityManager
-            ->getRepository(Appointment::class)
-        ;
+            ->getRepository(Contact::class)
+            ;
     }
 
-    public function testFindAllAppointments()
+    public function testFindAllContacts()
     {
-        $appointments = $this->getRepository()
-            ->findAllAppointments()
+        $contacts = $this->getRepository()
+            ->findAllContacts()
         ;
 
-        $this->assertGreaterThan(0, $appointments);
+        $this->assertGreaterThan(0, $contacts);
     }
 
-    public function testFindAppointmentsWithId()
+    public function testFindContactWithId()
     {
-        $appointment = $this->getRepository()
-            ->findAppointmentWithId(1)
+        $contact = $this->getRepository()
+            ->findContactWithId(1)
         ;
 
-        $this->assertSame(48.8558487, $appointment->getLat());
+        $this->assertSame('Toto Titi', $contact->getName());
     }
 
     /**
@@ -71,5 +71,4 @@ class AppointmentRepositoryTest extends KernelTestCase
         $this->entityManager->close();
         $this->entityManager = null;
     }
-
 }

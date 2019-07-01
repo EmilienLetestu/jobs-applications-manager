@@ -3,17 +3,18 @@
  * Created by PhpStorm.
  * User: emilien
  * Date: 01/07/2019
- * Time: 11:41
+ * Time: 16:29
  */
 
-namespace App\Responder\Job;
+namespace App\Responder\Contact;
+
 
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
 
 /**
  * Class ShowListingResponder
- * @package App\Responder
+ * @package App\Responder\Contact
  */
 class ShowListingResponder
 {
@@ -32,17 +33,17 @@ class ShowListingResponder
     }
 
     /**
-     * @param array $jobs
+     * @param array $contacts
      * @return Response
      * @throws \Twig\Error\LoaderError
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function __invoke(array $jobs): Response
+    public function __invoke(array $contacts): Response
     {
         return new Response(
-            $this->twig->render('job/show_listing.html.twig',[
-                'jobs' => $jobs
+            $this->twig->render('contact/show_listing.html.twig',[
+                'contacts' => $contacts
             ])
         );
     }

@@ -3,19 +3,21 @@
  * Created by PhpStorm.
  * User: emilien
  * Date: 01/07/2019
- * Time: 11:41
+ * Time: 15:29
  */
 
-namespace App\Responder\Job;
+namespace App\Responder\Application;
 
+
+use App\Entity\Application;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
 
 /**
- * Class ShowListingResponder
- * @package App\Responder
+ * Class ShowResponder
+ * @package App\Responder\Application
  */
-class ShowListingResponder
+class ShowResponder
 {
     /**
      * @var Environment
@@ -23,7 +25,7 @@ class ShowListingResponder
     private $twig;
 
     /**
-     * ShowListingResponder constructor.
+     * ShowResponder constructor.
      * @param Environment $twig
      */
     public function __construct(Environment $twig)
@@ -32,17 +34,17 @@ class ShowListingResponder
     }
 
     /**
-     * @param array $jobs
+     * @param Application $application
      * @return Response
      * @throws \Twig\Error\LoaderError
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function __invoke(array $jobs): Response
+    public function __invoke(Application $application): Response
     {
         return new Response(
-            $this->twig->render('job/show_listing.html.twig',[
-                'jobs' => $jobs
+            $this->twig->render('application/show.html.twig', [
+                'application' => $application
             ])
         );
     }
