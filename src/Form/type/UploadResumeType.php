@@ -12,6 +12,7 @@ namespace App\Form\type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\File;
 
 class UploadResumeType extends AbstractType
 {
@@ -19,7 +20,17 @@ class UploadResumeType extends AbstractType
     {
        $builder
            ->add('resume', FileType::class,[
-               'label' => 'Curiculum Vitae (PDF file)'
+               'label' => 'Curiculum Vitae (PDF file)',
+               'constraints' => [
+                   new File([
+                       'maxSize' => '2048k',
+                       'mimeTypes' => [
+                           'application/pdf',
+                           'application/x-pdf',
+                       ],
+                       'mimeTypesMessage' => 'Veuillez choisir un fichier valide',
+                   ])
+               ],
            ]);
     }
 }
