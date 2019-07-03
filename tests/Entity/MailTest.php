@@ -9,6 +9,7 @@
 namespace App\Tests\Entity;
 
 
+use App\Entity\Mail;
 use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
 
 class MailTest extends TestCase
@@ -25,7 +26,7 @@ class MailTest extends TestCase
         $signature         = null;
 
         $mail->setBody($mailBody);
-        $mail->setSender($senderMail);
+        $mail->setSenderMail($senderMail);
         $mail->setSubject($subject);
         $mail->setApplicant($applicantFullname);
         $mail->setCreatedOn($date);
@@ -33,7 +34,7 @@ class MailTest extends TestCase
         $mail->setSignature($signature);
 
         $this->assertSame($mailBody, $mail->getBody());
-        $this->assertSame($senderMail, $mail->getSender());
+        $this->assertSame($senderMail, $mail->getSenderMail());
         $this->assertSame($subject, $mail->getSubject());
         $this->assertSame($applicantFullname, $mail->getApplicant());
         $this->assertSame($date, $mail->getCreatedOn());
