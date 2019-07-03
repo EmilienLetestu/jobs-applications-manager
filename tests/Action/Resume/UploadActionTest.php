@@ -27,8 +27,11 @@ class UploadActionTest extends WebTestCase
         $this->assertSelectorExists('form');
 
         $form = $crawler->filter("form")->form();
+        $form['upload_resume[resume]']->upload('tests/Action/Resume/resume_test.pdf');
+        $client->submit($form);
+        $client->followRedirect();
 
-
-        $crawler = $client->submit($form);
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertSelectorTextContains('html h1', 'Hello world');
     }
 }
